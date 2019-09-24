@@ -1,0 +1,5 @@
+br/web/JsfCidade.class
+br/data/entity/Cidade.class
+br/data/crud/CrudCidade.class
+br/data/crud/EMNames.class
+br/data/crud/AbstractCrud.class
