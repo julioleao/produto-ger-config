@@ -8,22 +8,34 @@
     <h:body>
         Produto
         <h:form>
-            <h:inputText value="#{jsfCidade.codigo}"/>
+            <label>Código</label>
+                <h:inputText value="#{jsfCidade.codigo}"/>
+                <label>Cidade</label>
             <h:inputText value="#{jsfCidade.nome}" />
+                <label>Latitude</label>
+            <h:inputText value="#{jsfCidade.latitude}"/>
+                <label>Longitude</label>
+            <h:inputText value="#{jsfCidade.longitude}" />
             <h:commandButton action="#{jsfCidade.persist()}" />
         </h:form>
-        
+
         <h:form>
             <h:dataTable value="#{jsfCidade.all}" var="cid">
-            <h:column>
-                <h:outputText value="#{cid.codigo}" />
-            </h:column>
-         <h:column>
-                <h:outputText value="#{cid.nome}" />
-            </h:column>
-        
+                <h:column>
+                    <h:outputText value="#{cid.codigo}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{cid.nome}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{cid.latitude}" />
+                </h:column>
+                <h:column>
+                    <h:outputText value="#{cid.longitude}" />
+                </h:column>
+
             </h:dataTable>
-            </h:form>
+        </h:form>
     </h:body>
 </html>
 

@@ -25,6 +25,11 @@ public class JsfCidade implements Serializable {
     
     private int codigo;
     private String nome;
+    private int latitude;
+    private int longitude;
+
+
+
 
     public int getCodigo() {
         return codigo;
@@ -42,10 +47,29 @@ public class JsfCidade implements Serializable {
         this.nome = nome;
     }
     
+    public int getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(int latitude) {
+        this.latitude = latitude;
+    }
+
+    
+    public int getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(int longitude) {
+        this.longitude = longitude;
+    }
+    
     public void persist(){
         br.data.entity.Cidade cid = new br.data.entity.Cidade();
         cid.setCodigo(codigo);
         cid.setNome(nome);
+        cid.setLatitude(latitude);
+        cid.setLongitude(longitude);
         new br.data.crud.CrudCidade().persist(cid);
     }
     
