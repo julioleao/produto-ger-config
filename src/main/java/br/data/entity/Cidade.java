@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 
 /**
@@ -31,6 +32,7 @@ public class Cidade implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "codigo")
+    @Min (1)
     private Integer codigo;
     @Column(name = "nome")
     private String nome;
