@@ -8,7 +8,7 @@
     <h:body>
         Produto
         <h:form>
-            <h:inputText value="#{jsfCidade.codigo}"/>
+            <h:inputText value="#{jsfCidade.codigo}" validator="#{jsfCidade.validateModelNo}"/>
             <h:inputText value="#{jsfCidade.nome}" />
             <h:commandButton action="#{jsfCidade.persist()}" />
         </h:form>
