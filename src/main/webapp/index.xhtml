@@ -9,7 +9,7 @@
         Produto
         <h:form>
             <label>Código</label>
-                <h:inputText value="#{jsfCidade.codigo}"/>
+                <h:inputText value="#{jsfCidade.codigo}" validator="#{jsfCidade.validateModelNo}"/>
                 <label>Cidade</label>
             <h:inputText value="#{jsfCidade.nome}" />
                 <label>Latitude</label>

@@ -8,6 +8,10 @@ package br.web;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -63,6 +67,24 @@ public class JsfCidade implements Serializable {
     public void setLongitude(int longitude) {
         this.longitude = longitude;
     }
+    
+    public void validateModelNo(FacesContext context, UIComponent comp,
+			Object value) {
+
+		System.out.println("inside validate method");
+
+		int mno = (int) value;
+
+		if (mno == 0) {
+			((UIInput) comp).setValid(false);
+
+			FacesMessage message = new FacesMessage(
+					"O valor não pode ser 0");
+			context.addMessage(comp.getClientId(context), message);
+
+		}
+
+	}
     
     public void persist(){
         br.data.entity.Cidade cid = new br.data.entity.Cidade();
